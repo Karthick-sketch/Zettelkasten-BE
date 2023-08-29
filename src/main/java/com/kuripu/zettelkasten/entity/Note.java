@@ -1,5 +1,7 @@
 package com.kuripu.zettelkasten.entity;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,6 +14,8 @@ public class Note {
     private String referenceId;
     private String title;
     private String body;
+    private Date createdAt;
+    private Date updatedAt;
 
     public long getId() {
         return id;
@@ -43,5 +47,21 @@ public class Note {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
