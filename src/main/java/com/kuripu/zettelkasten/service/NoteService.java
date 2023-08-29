@@ -15,4 +15,8 @@ public class NoteService {
     public List<Note> getNotes() {
         return noteRepository.findAll();
     }
+
+    public List<Map<String, String>> getNoteList() {
+        
+    }
 }
