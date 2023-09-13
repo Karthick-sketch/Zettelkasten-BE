@@ -10,27 +10,35 @@ import jakarta.persistence.Id;
 public class Note {
     @Id
     @GeneratedValue
-    private long id;
-    private String referenceId;
+    private int id;
+    private String name;
+    private String noteId;
     private String title;
-    private String body;
+    private String content;
     private Date createdAt;
-    private Date updatedAt;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getReferenceId() {
-        return referenceId;
+    public String getName() {
+        return name;
     }
 
-    public void setReferenceId(String referenceId) {
-        this.referenceId = referenceId;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNoteId() {
+        return noteId;
+    }
+
+    public void setNoteId(String referenceId) {
+        this.noteId = referenceId;
     }
 
     public String getTitle() {
@@ -41,12 +49,12 @@ public class Note {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+    public String getContent() {
+        return content;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setContent(String body) {
+        this.content = body;
     }
 
     public Date getCreatedAt() {
@@ -55,13 +63,5 @@ public class Note {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

@@ -3,13 +3,15 @@ package com.kuripu.zettelkasten.controller;
 import com.kuripu.zettelkasten.entity.Note;
 import com.kuripu.zettelkasten.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
+@CrossOrigin(value = "http://localhost:5173/")
 @RestController
 public class NotesController {
     @Autowired
@@ -21,12 +23,12 @@ public class NotesController {
     }
 
     @GetMapping("/notelist")
-    public List<Map<String, String>> getNoteList() {
-        return noteService.getNoteList();
+    public Collection<Note> getNoteTitles() {
+        return noteService.getNoteTitles();
     }
 
-    @GetMapping("note/{refId}")
-    public Note getNoteByReferenceID(@PathVariable String refId) {
-        return noteService.findNoteByReferenceID(refId);
+    @GetMapping("note/{noteId}")
+    public Note getNoteByReferenceID(@PathVariable String noteId) {
+        return noteService.findNoteByReferenceID(noteId);
     }
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class NoteService {
@@ -17,11 +16,11 @@ public class NoteService {
         return noteRepository.findAll();
     }
 
-    public List<Map<String, String>> getNoteList() {
-        return noteRepository.getAllNotesList();
+    public List<Note> getNoteTitles() {
+        return noteRepository.getNoteTitles();
     }
 
-    public Note findNoteByReferenceID(String refId) {
-        return noteRepository.findByReferenceID(refId);
+    public Note findNoteByReferenceID(String noteId) {
+        return noteRepository.findByReferenceID(noteId);
     }
 }
