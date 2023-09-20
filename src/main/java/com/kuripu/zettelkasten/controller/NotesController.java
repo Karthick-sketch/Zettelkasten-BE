@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(value = "http://localhost:5173/")
 @RestController
@@ -23,7 +24,7 @@ public class NotesController {
     }
 
     @GetMapping("/notelist")
-    public Collection<Note> getNoteTitles() {
+    public Collection<Map<String, String>> getNoteTitles() {
         return noteService.getNoteTitles();
     }
 
